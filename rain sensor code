@@ -1,0 +1,20 @@
+delay(500);
+sensorValue2 = analogRead(sensorPin);
+sensorValue2 = constrain(sensorValue2, 150, 440); 
+sensorValue2 = map(sensorValue2, 150, 440, 1023, 0); 
+if (sensorValue2>= 20)
+{
+  Serial.print("rain is detected");
+  
+digitalWrite(enable2, HIGH);
+  }
+  else
+  
+{
+  Serial.print("rain not detected");
+  digitalWrite(enable2, LOW); 
+  }
+//Serial.print("Rain value:       ");
+//Serial.println(sensorValue2);
+Serial.println();
+delay(100);
